@@ -79,7 +79,7 @@ namespace WebApplicationDeploy
             startInfo.FileName = "CMD";
             var args = $@"/c git pull origin master";
             startInfo.Arguments = args;
-            FooService.Print(args.Replace(@"/c", ""));
+            FooService.Print(args.Replace(@"/c", "").Trim());
             process.StartInfo = startInfo;
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
@@ -366,11 +366,6 @@ namespace WebApplicationDeploy
                 {
                     sb.AppendLine(s);
                 }
-            }
-            string strAddress = $"{IISManagerUtil.GetLocalIpAddress()}             {hostName}";
-            if (!hostsFileContent.Contains(strAddress))
-            {
-                sb.AppendLine(strAddress);
             }
             var str = sb.ToString();
             if (!string.IsNullOrWhiteSpace(str))
