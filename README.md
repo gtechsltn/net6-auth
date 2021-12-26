@@ -4,3 +4,6 @@
 + Documentation with Swagger / OpenAPI
 + Logging with Serilog
 + Deploy to IIS
++ Hangfire
+  + Duplicate Background Job
+  + Continue when Faile
